@@ -83,7 +83,7 @@ begin
     while (num<>0) and (cont < 3) do begin
         dig:= num mod 10;
         if(dig=0)then cont:=cont+1;
-        dig:= num div 10;
+        num:= x div 10;
     end;
     almenos3ceros:= cont>=3;
 end;
