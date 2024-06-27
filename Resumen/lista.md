@@ -1,3 +1,6 @@
+# **APRENDIENDO A USAR LISTAS EN:**
+# *Pascal*
+![bg right width:600px height:400px](./data/pascal.png)
 
 # **LISTA**
 

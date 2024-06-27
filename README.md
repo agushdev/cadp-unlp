@@ -5,10 +5,10 @@
 
 ### Los temas importantes de CADP son:
 * [Corte de control.](/Resumen/corte_control.md)
-* [Maximo y Minimo.]()
-* [Promedio y porcentaje.]()
-* [Desfragmentar numero.]()
-* [Modularizacion (Procedure, Function).]()
+* [Maximo y Minimo.](/Resumen/max_min.md)
+* [Promedio y porcentaje.](/Resumen/promedio_porcentaje.md)
+* [Desfragmentar numero.](/Resumen/desfragmentar_num.md)
+* [Modularizacion (Procedure, Function).](/Resumen/modularizacion.md)
 * [Parametros del modulo (por referencia y por valor).]()
 * [Registro.]()
 * [Vector.](/Resumen/vector.md)

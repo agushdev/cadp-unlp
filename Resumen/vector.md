@@ -1,11 +1,3 @@
----
-marp: true
-theme: default
-class: invert
-paginate: true
-
----
-
 # **APRENDIENDO A USAR VECTORES EN:**
 # *Pascal*
 ![bg right width:600px height:400px](./data/pascal.png)
