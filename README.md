@@ -4,13 +4,13 @@
 <img src="https://th.bing.com/th/id/OIP.4PNy2-mnbAG9KdAsJqA-mQAAAA?rs=1&pid=ImgDetMain" width="500" height="400">
 
 ### Los temas importantes de CADP son:
-* [Corte de control]().
-* [Maximo y Minimo]().
-* [Promedio y porcentaje]().
-* Desfragmentar numero.
-* Modularizacion (Procedure, Function).
-* Parametros del modulo (por referencia y por valor).
-* Registro.
-* Vector.
-* Lista.
+* [Corte de control.]()
+* [Maximo y Minimo.]()
+* [Promedio y porcentaje.]()
+* [Desfragmentar numero.]()
+* [Modularizacion (Procedure, Function).]()
+* [Parametros del modulo (por referencia y por valor).]()
+* [Registro.]()
+* [Vector.]()
+* [Lista.]()
 * Por ultimo pero lo **MAS IMPORTANTE** es la comprension del enunciado.
