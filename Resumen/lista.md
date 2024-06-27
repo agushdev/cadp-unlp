@@ -1,27 +1,10 @@
----
-marp: true
-theme: default
-class: invert
-paginate: true
 
----
-
-# **APRENDIENDO A USAR LISTAS EN:**
-# *Pascal*
-![bg right width:600px height:400px](./data/pascal.png)
-
----
-
-
-
----
 # **LISTA**
 
-### Coleccion de nodos, donde cada nodo tiene un elemento y en que direccion de memoria se encuentra el siguiente nodo.
+### Una lista es una coleccion de nodos, donde cada nodo tiene un elemento y en que direccion de memoria se encuentra el siguiente nodo.
 
 ### Cada nodo de la lista se representa con un puntero, que apunta a un dato (elemento de la lista) y a una direccion (donde se ubica el siguiente elemento de la lista).
 ### Toda lista tiene un elemento inicial.
----
 
 ## **Declaracion:**
 ````pascal
@@ -34,7 +17,6 @@ type
 ````
 ### Siempre antes de operar con una variable de lista hay que inicializar en nil, en el caso que la primera operacion sea asignarle el valor de otro puntero no es necesario.
 
----
 ### **Importante:** antes de acceder a un nodo de lista se tiene que validar que la direccion sea valida.
 
 ## **Acceso:**
@@ -45,8 +27,8 @@ variableLista^.elem
 { Acceso al siguiente nodo }
 variableLista^.sig
 ````
----
-# **Carga**
+
+## **Carga**
 ### Cuando se desconoce la cantidad de elementos, se carga con un while para que verifique una condicion de carga.
 ````pascal
 type
@@ -67,8 +49,8 @@ begin
     end;
 end;
 ````
----
-# **Metodos de carga**
+
+## **Metodos de carga**
 ````pascal
 { Agregar al inicio }
 procedure agregarAdelante(var l: lista; elemento: tElemento);
@@ -96,8 +78,8 @@ begin
     ult:=nue;
 end;
 ````
----
-# **Insertar ordenado**
+
+## **Insertar ordenado**
 ````pascal
 { Insertar ordenado }
 procedure insertarOrdenar(var l: lista; elemento: tElemento);
@@ -119,40 +101,87 @@ begin
     nue^.sig := act;
 end;
 ````
----
-# **Busqueda**
+
+## **Busqueda Desordenada**
 ````pascal
-function buscar(l: lista; valorBuscado: tipo): boolean;
+function busquedaDesordenada(l: lista; valorBuscado: tipo): boolean;
+var ok:boolean;
 begin
-    while(l <> nil) and (l^.elem.campoValor <> valorBuscado) do
-        l := l^.sig
-    buscar := l <> nil;
+    ok:= false;
+    while(l <> nil) and (ok = false)do begin
+        if (l^.elem.campo = valorBuscado) then
+            ok:= true
+        else
+            l:= l^.sig;
+    end;
+    busquedaDesordenada:= ok;
 end;
 ````
----
-# **Eliminacion**
+## **Busqueda Ordenada**
 ````pascal
-procedure eliminar(var l: lista; valorAlEliminar: tipo);
+function busquedaOrdenada(l: lista; valorBuscado: tipo): boolean;
+var ok:boolean;
+begin
+    ok:= false;
+    while (l <> nil) and (l^.elem.campo {operacion <> o <,>} valorBuscado) do
+        l:= l^.sig;
+    if (l <> nil) and (l^.elem.campo = valor)then
+        ok:=true;
+    busquedaOrdenada:= ok;
+end;
+````
+
+
+## **Eliminar sin repeticiones**
+````pascal
+procedure eliminarSinRepeticiones(var l: lista; valorAEliminar: tipo);
 var
     act, ant: lista;
 begin
     act := l;
     ant := l;
-    while (act <> nil) and (act^.elem.campoValor <> valorEliminar) do begin
+    while (act <> nil) and (act^.elem.campoValor <> valorAEliminar) do begin
         ant := act;
         act := act^.sig;
     end;
     if (act <> nil) then begin
         if (act = l) then
-            l := act^.sig;
+            l := l^.sig;
         else
             ant^.sig := act^.sig;
         dispose(act);
     end;
 end;
 ````
----
-# **Recorrer lista**
+
+## **Eliminar con repeticiones**
+````pascal
+procedure eliminarConRepeticiones(var l: lista; valorAEliminar: tipo);
+var
+    act, ant: lista;
+begin
+    act := l;
+    ant := l;
+    while (act <> nil) do begin
+        if(act^.elem.capo <> valorAEliminar) then begin
+            ant:= act;
+            act:= act^.sig;
+        end
+        else begin
+            if(act = l)then begin
+                l:= act^.sig;
+                ant:= l;
+            end
+            else
+                ant^.sig:= act^.sig;
+            dispose(act);
+            act:= ant;
+        end;
+    end;
+end;
+````
+
+## **Recorrer lista**
 ### En este caso imprimirla:
 ````pascal
 Procedure recorrido (l:lista);​
@@ -165,4 +194,3 @@ begin
     end;​
 end;
 ````
----
