@@ -1,6 +1,6 @@
 # **APRENDIENDO A DESFRAGMENTAR UN NUMERO EN:**
 # *Pascal*
-![bg right width:600px height:400px](./data/pascal.png)
+<img src='./data/pascal.png' width='350' height='225'>
 
 ## Desfragmentar Numero: Si necesitamos desfragmentar un numero podemos hacerlo de la siguiente manera:
 ### Por ej Desfragmentar mi legajo y contar cuantos 0 tiene.

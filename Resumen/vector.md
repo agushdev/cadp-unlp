@@ -1,6 +1,6 @@
 # **APRENDIENDO A USAR VECTORES EN:**
 # *Pascal*
-![bg right width:600px height:400px](./data/pascal.png)
+<img src='./data/pascal.png' width='350' height='225'>
 
 ---
 # **VECTOR O ARREGLO**

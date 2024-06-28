@@ -1,6 +1,6 @@
 # **APRENDIENDO A CALCULAR PROMEDIOS Y PORCENTAJES EN:**
 # *Pascal*
-![bg right width:600px height:400px](./data/pascal.png)
+<img src='./data/pascal.png' width='350' height='225'>
 
 ## Promedio: Lo utilizamos para calcular un promedio.
 ### Por ejemplo, si necesitamos calcular el promedio de notas de Carlos, Pedro y Felipe.

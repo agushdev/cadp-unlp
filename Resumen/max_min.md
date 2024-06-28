@@ -1,6 +1,6 @@
 # **APRENDIENDO A CALCULAR EL MAX Y MIN EN:**
 # *Pascal*
-![bg right width:600px height:400px](./data/pascal.png)
+<img src='./data/pascal.png' width='350' height='225'>
 
 ## MAX: Obviamente lo utilizamos para encontrar el valor maximo.
 ### Por ejemplo:
