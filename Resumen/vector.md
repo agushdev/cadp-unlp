@@ -2,14 +2,12 @@
 # *Pascal*
 <img src='./data/pascal.png' width='350' height='225'>
 
----
 # **VECTOR O ARREGLO**
 
 ### Un arreglo (ARRAY) es una estructura de datos compuesta que permite acceder a cada componente por una variable indice, que da la posicion del componente dentro de la estructura de datos.
 
 ### Todos los elementos del arreglo son del mismo tipo.
 
----
 
 ## **Declaracion:**
 ````pascal
@@ -26,7 +24,6 @@ type
 
 #### IMPORTANTE: antes de acceder a un elemento del arreglo se tiene que validar si el indice a utilizar es uno valido para el rango del arreglo si no se tiene la certeza de que es uno valido.
 
----
 
 ## **Acceso**
 
@@ -45,8 +42,6 @@ begin
         readln(valores[10]);
 end;
 ````
-
----
 
 ### Como los indices del arreglo son ordinales se puede utilizar alguna estructura de control iterativa para facilitar el acceso a los elementos
 
@@ -67,17 +62,44 @@ end;
 
 ## **Dimension fisica y logica**
 
-### Fisica
+### <u><i>Fisica</i></u>
 
 ### Se especifica en el momento de la declaracion y determina su ocupacion maxima de memoria.
 ### La cantidad de memoria total reservada no variara durante la ejecucion del programa.
 
-### Logica
+### <u><i>Logica</i></u>
 
 ### Se determina cuando se cargan contenidos a los elementos del arreglo.
 ### Indican la cantidad de posiciones de memoria ocupadas con contenido real. Nunca puede superar la dimension Fisica.
 
----
+## Agregar elemento al Final
+
+````pascal
+procedure AgregarElemento (var v:vector; var dimL:integer; elemento:integer);
+begin
+     if (dimL < dimF) then begin   // verifica si hay espacio en el vector
+       dimL:= dimL+1; // primero se incrementa dimL
+       v [dimL]:= elemento;  //despues se guarda el elemento en el vector
+    end;
+end;
+````
+
+## Insertar elemento
+
+````pascal
+procedure insertarEnPosicion (var v:vector; var dimL:integer; elemento:integer; pos:integer);
+var
+  i : integer;
+Begin
+// verifica que haya lugar y que la posicion que le manden sea válida
+   if (dimL < dimF) and ((pos >= 1) and (pos <= dimL)) then begin 
+     for  i:= dimL downto pos do
+         v[i+1]:= v[i] ; //hace el corrimiento para la derecha
+     v[pos]:= elemento;
+     dimL := dimL + 1;
+   end;
+end;
+````
 
 ## **Busqueda**
 
@@ -85,10 +107,7 @@ end;
 
 ### El array puede estar ordenado o no, dependiendo de esto se puede hacer una busqueda mas eficiente.
 
----
-
-> ### Si esta desordenado si o si hay que verificar cada posicion valida ya que puede ser que exista en cualquiera
-
+>  **Si esta desordenado si o si hay que verificar cada posicion valida ya que puede ser que exista en cualquiera**
 ````pascal
 function busqueda(a:numeros; dimL:integer; num:integer): boolean;
 var
@@ -101,9 +120,7 @@ begin
 end;
 ````
 
----
-
-> ### Si esta ordenado se puede hacer una busqueda hasta encontrarl o que se deje de cumplir que la posicion sea valida ya que el criterio de orden establece que no se puede encontrar mas alla.
+>  **Si esta ordenado se puede hacer una busqueda hasta encontrarlo o que se deje de cumplir que la posicion sea valida ya que el criterio de orden establece que no se puede encontrar mas alla.**
 
 ````pas
 function busqueda(a:numeros; dimL:integer; num:integer): boolean;
@@ -117,9 +134,7 @@ begin
 end;
 ````
 
----
-
-> ### Si esta ordenado se puede usar un algoritmo mas eficiente llamado busqueda dicotomica, el cual consiste en ir partiendo a mitades de las cuales se elige la que deberia contener el valor buscado hasta encontrar el valor si es que existe.
+>  **Si esta ordenado se puede usar un algoritmo mas eficiente llamado busqueda dicotomica, el cual consiste en ir partiendo a mitades de las cuales se elige la que deberia contener el valor buscado hasta encontrar el valor si es que existe.**
 
 ````pas
 function busquedaBinaria(vec:numeros; dimL:integer; buscado:integer): boolean;
@@ -139,8 +154,6 @@ begin
     busquedaBinaria:= (ini <= fin) and (buscado = vec[medio]);
 end;
 ````
-
----
 
 ## **Eliminacion**
 

@@ -67,18 +67,18 @@ begin
 end;
 
 { Agregar al final }
-procedure agregarAtras(var pI,pU:lista; elem: tElem);
+procedure agregarAtras(var l,ult:lista; elem: tElem);
 var
     nue: lista;
 begin
     new(nue);
     nue^.elem := elem;
     nue^.sig := nil;
-    if (pri <> nil) then
-        ult^.sig := nue // si la lista tiene elementos
-    else
-        pri := nue; // si la lista no tiene elementos
-    ult:=nue;
+    if (pri <> nil) then // si la lista tiene elementos
+        ult^.sig := nue // enlazo con el ultimo
+    else                // si la lista no tiene elementos
+        pri := nue;     // actualizo el inicio 
+    ult:=nue; // actualizo el ultimo
 end;
 ````
 
@@ -87,21 +87,21 @@ end;
 { Insertar ordenado }
 procedure insertarOrdenar(var l: lista; elemento: tElemento);
 var
-    nue, act, ant: lista;
+    nue, act, ant: lista; // punteros auxiliares para recorrer
 begin
-    new(nue);
+    new(nue); // crea nood y carga dato
     nue^elem := elemento;
-    act := l;
+    act := l; // ubico act y ant al inicio de la lista
     ant := l;
-    while(act <> nil) and (elemento.campoOrden > act^.elem.campoOrden) do begin
-        ant := act;
-        act := act^.sig;
+    while(act <> nil) and (elemento.campoOrden > act^.elem.campoOrden) do begin // busca la posicion para insertar el nodo creado
+        ant := act; // el actual se actualiza al anterior
+        act := act^.sig; // el actual avanza
     end;
-    if (act = ant) then
+    if (act = ant) then // si va al inicio o la lista esta vacia
         l := nue
-    else
+    else // si va al medio o al final
         ant^.sig := nue;
-    nue^.sig := act;
+    nue^.sig := act; // realizo enlace
 end;
 ````
 
