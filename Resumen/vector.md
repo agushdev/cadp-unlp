@@ -72,12 +72,61 @@ end;
 ### Se determina cuando se cargan contenidos a los elementos del arreglo.
 ### Indican la cantidad de posiciones de memoria ocupadas con contenido real. Nunca puede superar la dimension Fisica.
 
+## Carga
+
+````pascal
+// CARGAR UN VECTOR CUANDO NO SE SABE LA CANT EXACTA DE DATOS
+// Ej: Cuando dice a lo sumo.
+
+//dimL tiene que estar inicializada en 0 desde donde se llame al metodo.
+procedure cargar(var v:vector; var dimL:integer );
+ var
+    dato: integer;
+ begin
+   read(dato);
+   while(dato <> 99)  and ( dimL < dimF )do begin 
+   // mientras el dato sea distinto a 99 y no termine.
+          dimL := dimL + 1;  // incremento dimL
+          v [dimL] := dato;  // guardo dato
+          read (dato); // leo otro dato
+   end;
+end;
+
+// CARGAR VECTOR COMPLETO
+// Al cargar todo no hace falta darle uso a la dimL, ya que tenemos la cantidad exacta en la dimF
+
+procedure cargar(var v:vector);
+ var
+    dato: integer;
+ begin
+   read(dato);
+   for(i:=1 to dimF)do begin
+          v[i]:=dato;
+          read(dato);
+   end;
+end;
+
+// CARGAR VECTOR CON REGISTRO
+
+procedure cargarVector (var v:vector; var dimL:integer);
+var
+   a:alumno;
+begin
+     leerAlumno(a);
+     while (a.codigo_alumno <> 99)  and ( dimL < dimF ) do begin
+           dimL := dimL + 1;
+           v[dimL] := a;
+           leerAlumno(a);
+     end;
+end;
+````
+
 ## Agregar elemento al Final
 
 ````pascal
 procedure AgregarElemento (var v:vector; var dimL:integer; elemento:integer);
 begin
-     if (dimL < dimF) then begin   // verifica si hay espacio en el vector
+     if(dimL < dimF) then begin // verifica si hay espacio en el vector
        dimL:= dimL+1; // primero se incrementa dimL
        v [dimL]:= elemento;  //despues se guarda el elemento en el vector
     end;
@@ -93,7 +142,7 @@ var
 Begin
 // verifica que haya lugar y que la posicion que le manden sea válida
    if (dimL < dimF) and ((pos >= 1) and (pos <= dimL)) then begin 
-     for  i:= dimL downto pos do
+     for i:= dimL downto pos do
          v[i+1]:= v[i] ; //hace el corrimiento para la derecha
      v[pos]:= elemento;
      dimL := dimL + 1;
