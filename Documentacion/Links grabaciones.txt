@@ -1,0 +1,107 @@
+Introducción
+https://drive.google.com/file/d/1lWcD1x3PrOYSYRylVrl3zc2ipWZOZ08L/view
+
+Tipo de dato numerico - div y mod - tipo de dato boolean
+https://drive.google.com/file/d/1RnmZt2X84voA3_8w6LJ26uDdM-8D0oHG/view
+
+tipo de dato char y string - variables y constantes
+https://drive.google.com/file/d/1SJ4q2X77HeWHs0j7vzrN_XzufARjMom6/view
+
+estructura de programa - pre y post condiciones - read y write
+https://drive.google.com/file/d/17YYulgXu5ECAPahse51sTuoovXhSK4ii/view
+
+estructuras de control if y case
+https://drive.google.com/file/d/1n8nxOca8QDnNVXoMHCOxNGaHzwO7N0og/view
+
+estructuras de control while y repeat until
+https://drive.google.com/file/d/1CJ_3djg694RAg-_fd2rPI3A1OnnsEz58/view
+
+estructuras de control - for
+https://drive.google.com/file/d/1kgS4HjZC2-LNu-Fq2OTFqsSDrdgwEzF5/view
+
+maximos y minimos
+https://drive.google.com/file/d/1BdeUpV_rxCKOiwvlUFE9Q2oqEZt3Lfjp/view
+
+tipos de datos definidos por el usuario
+https://drive.google.com/file/d/16m_soc841ZLIOlE0-a7I5lujW_KZiycw/view
+
+tipos de datos definidos por el usuario - subrango
+https://drive.google.com/file/d/1hocSwINvmfyxqEmXJDaagJUnKMVW6W_9/view
+
+modularizacion
+https://drive.google.com/file/d/1-9nJIxP479L21CArUi7H5pvrMZeNnFiw/view
+
+procedimientos
+https://drive.google.com/file/d/1LUev2ORrtcJNbMyIZ7E69FvaTX22SZSN/view
+
+funciones
+https://drive.google.com/file/d/13XojUntEkvK-O2gN7ZmNSAdyq0bFJcwZ/view
+
+alcance de las variables
+https://drive.google.com/file/d/1Vy0zwNMrYdHYQ2uvta6D4OTAoBkdBxxe/view
+
+comunicacion entre modulos
+https://drive.google.com/file/d/1NZtfou18h43rb-GB_OTjuOBMoA0aBh81/view
+
+parametros por valor y por referencia
+https://drive.google.com/file/d/1_uv_Wm7dpjztDsedEpzHughdGr8orWjA/view
+
+tipos de datos estructurados
+https://drive.google.com/file/d/1LGGRNZF6uggWyTOP-yi6-VgLOjPDHKNF/view
+
+registros
+https://drive.google.com/file/d/18JJg7a37k6E9MP4HI858_DlxZmkFVNFy/view
+
+registro de registro
+https://drive.google.com/file/d/1GrjuhmrtG0ZMo_gD9temUtfRSX-VYHH6/view
+
+corte de control
+https://drive.google.com/file/d/1L4ENciagPujHCVFT6iXE_-y73LXr5JVS/view
+
+estructura de datos - arreglo
+https://drive.google.com/file/d/1RVg0VK4e2EGsffGomjaJdHUG4Iy9gVei/view
+
+estructura de datos - arreglo - recorrido total y parcial
+https://drive.google.com/file/d/1BNQkrx-V4CkC7aF9xRa-f_riURa--oAm/view
+
+arreglos - dim fisica y dim logica
+https://drive.google.com/file/d/15IY7YSKvMaY-FkStoDCjrfmq-nhpefkr/view
+
+arreglos - agregar insertar y eliminar elementos
+https://drive.google.com/file/d/1N9XYrNQjS-sIf1xCy92HVsq9eUooyCan/view
+
+arreglos - busqueda en vectores ordenados y desordenados
+https://drive.google.com/file/d/1W2wUwRLMQO7Du09yphEK-XgzsxJFe53Q/view
+
+alocacion de memoria estatica y dinamica
+https://drive.google.com/file/d/1-PhTXFJvjOfYBtEzBd49nSGT3SXu-zWQ/view
+
+puntero
+https://drive.google.com/file/d/1Ae85i8ciA1m8sFIbArEm15_oQ8zE13DT/view
+
+memoria de un programa
+https://drive.google.com/file/d/1n5GBqh6p0Bg96QTlozV6P6nhsuqF8hU1/view
+
+introduccion - lista
+https://drive.google.com/file/d/1-SekN83bkfXB7WdvszGAeX43237LNiaa/view
+
+creacion y recorrido - lista
+https://drive.google.com/file/d/1i87W6CPoXVJ2hAuP7sxd3aESGUfXFaOQ/view
+
+aregar adelante y al final - lista
+https://drive.google.com/file/d/18WfQNXzhntPTCxWT69jKUbGNcIAyRr3C/view
+
+busqueda - lista
+https://drive.google.com/file/d/1UfOiN_d-e8JRYMZMYHuc0tH7w3iUGvPC/view
+
+eliminar - lista
+https://drive.google.com/file/d/1iJ9J1lCFQIBq58Wcu7koTz3TG9pohHLj/view
+
+insertar ordenado - lista
+https://drive.google.com/file/d/1dAlKeN9cdCHxJq_tHeDhHBKcgYRvZ-qN/view
+
+correccion de programas
+https://drive.google.com/file/d/1uTap3V1FUBbtOBjVxrK2MXBq7hysbyvo/view
+
+eficiencia de programas
+https://drive.google.com/file/d/1F1q0TdggdTdPX6UHVecvFt7YwGfObjCS/view
