@@ -38,7 +38,7 @@ begin
     for i:=2010 to 2020 do vM[i]:= 0;
 end;
 
-procedure insertarOrdenado(var l:lista; c:compra);
+procedure insertarOrdenado(var l2:lista; c:compra);
 var
     nue, act, ant: lista;
 begin
@@ -57,56 +57,77 @@ begin
     nue^.sig := act;
 end;
 
-//procedure actualizarMax(var max,max1:integer; dni:integer)
-
 procedure generarLista(l:lista; var l2:lista);
+var aux:lista;
 begin
-    while (l<>nil)do begin
-        if(l^.elem.anio>=2010) and (l^.elem.anio<=2020) then insertarOrdenado(l,l^.elem);
-        l:= l^.sig;
+    aux:= l;
+    while (aux<>nil)do begin
+        if(aux^.elem.anio>=2010) and (aux^.elem.anio<=2020) then insertarOrdenado(l2,aux^.elem);
+        aux:= aux^.sig;
     end;
 end;
 
-procedure recorrido(l2:lista; var vM:vecMonto);
-var
-    anioActual: rAnioA;
-    max,max1:integer;
-    montoTotal:real;
+procedure actualizarMax(dniActual,cantComprasActual:integer; var dni1,dni2,cantCompras1,cantCompras2:integer);
 begin
-    montoTotal:=0;
-    max:= -9999; max1:= -9999;
-    while(l2<>nil) do begin
-        anioActual:=l2^.elem.anio;
-        while(l2<>nil) and (anioActual=l2^.elem.anio)do begin
-            vM[anioActual]:= vM[anioActual] + l2^.elem.monto;
-            //actualizarMax(max,max1,l2^.elem.dni);
-            if ((l^.elem.cod mod 10)=0) then montoTotal:= montoTotal + l2^.elem.monto;
-        end;
-        l2:= l^.sig;
+    if (cantComprasActual > cantCompras1)then begin
+        cantCompras2:= cantCompras1;
+        dni2:= dni1;
+        cantCompras1:= cantComprasActual;
+        dni1:= dniActual;
+    end else if (cantComprasActual > cantCompras2)then begin
+        cantCompras2:= cantComprasActual;
+        dni2:= dniActual;
     end;
-    writeln(montoTotal);
-    //writeln(max,max1); Esta incompleto y incluso esta mal!
 end;
 
-var
-    l,l2:lista;
-    vM:vecMonto;
-    minAnio:integer;
+function peorAnio(var vM:vecMonto): integer;
+var 
+    minAnio,i:integer;
     min:real;
-    i:integer;
 begin
-    l:= nil;
-    l2:= nil;
     min:= 9999;
-    cargarLista(l);
-    inicializarVec(vM);
-    generarLista(l,l2);
-    recorrido(l2,vM);
     for i:=2010 to 2020 do begin
         if(vM[i] < min) then begin
             minAnio:=i;
             min:=vM[i];
         end;
     end;
-    writeln(minAnio); // B.1 COMPLETO
+    peorAnio:= minAnio;
+end;
+
+procedure recorrido(l2:lista; var vM:vecMonto);
+var
+    dniActual, cantComprasActual:integer;
+    dni1,dni2,cantCompras1,cantCompras2:integer;
+    montoTotal:real;
+begin
+    montoTotal:=0;
+    cantCompras1:=-9999;
+    cantCompras2:=-9999;
+    while(l2<>nil) do begin
+        dniActual:= l2^.elem.dni;
+        cantComprasActual:= 0;
+        while(l2<>nil) and (dniActual = l2^.elem.dni) do begin
+            cantComprasActual:= cantComprasActual + 1;
+            vM[l2^.elem.anio]:= vM[l2^.elem.anio] + l2^.elem.monto;
+            if ((l^.elem.cod mod 10)=0) then montoTotal:= montoTotal + l2^.elem.monto;
+            l2:= l2^.sig;
+        end;
+        actualizarMax(dniActual,cantComprasActual,dni1,dni2,cantCompras1,cantCompras2);
+    end;
+    writeln(montoTotal);
+    peorAnio(vM);
+    writeln(dni1,dni2);
+end;
+
+var
+    l,l2:lista;
+    vM:vecMonto;
+begin
+    l:= nil;
+    l2:= nil;
+    cargarLista(l);
+    inicializarVec(vM);
+    generarLista(l,l2);
+    recorrido(l2,vM);
 end.
