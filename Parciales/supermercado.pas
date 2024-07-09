@@ -10,8 +10,6 @@ b. Una vez almacenada la estructura del inciso a, procesar estos datos e informa
 2. Los dos DNI de los clientes que realizaron mayor cantidad de compras.
 3. COMPLETO: El monto total facturado de compras con código múltiplo de 10.}
 
-// FALTA HACER EL B.2, esta mal hecho. Despues lo actualizo.
-
 program super;
 
 type
