@@ -32,7 +32,6 @@ variableLista^.sig
 ````
 
 ## **Carga**
-### Cuando se desconoce la cantidad de elementos, se carga con un while para que verifique una condicion de carga.
 ````pascal
 type
     tElemento = record
