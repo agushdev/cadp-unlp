@@ -29,6 +29,6 @@ var
     porcentaje:real;
 begin
     pedro:= 9; // Nota de Pedro
-    porcentaje:= (pedro / notaMax)*100; // Porcentaje de la nota de Pedro.
+    porcentaje:= (pedro / 100)*notaMax; // Porcentaje de la nota de Pedro.
 end;
 ````
